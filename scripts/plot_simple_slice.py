@@ -28,15 +28,21 @@ else:
 #101.073957306 4.48979591837 8.77551020408
 
 #receiver coordinates
+#alt = n.linspace(-n.pi/2,n.pi/2)
 alt = n.linspace(-n.pi/2,n.pi/2)
 az = n.zeros_like(alt)
 
 #tx_beam = 10*n.log10(1 - n.sin(alt)**2*n.sin(az)**2)
 S_slice_E = hp.pixelfunc.get_interp_val(S,alt,az) #- tx_beam
 S_slice_E_err = hp.pixelfunc.get_interp_val(S_err,alt,az)
+
+#pi/2
 S_slice_H = hp.pixelfunc.get_interp_val(S,alt,az+n.pi/2) #- tx_beam
 S_slice_H_err = hp.pixelfunc.get_interp_val(S_err,alt,az+n.pi/2)
+
 M_slice_E = hp.pixelfunc.get_interp_val(M,alt,az) #- tx_beam
+
+#pi/2
 M_slice_H = hp.pixelfunc.get_interp_val(M,alt,az+n.pi/2)
 
 
