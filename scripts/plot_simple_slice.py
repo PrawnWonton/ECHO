@@ -1,3 +1,5 @@
+### Script to plot the output of the CST_to_healpix_mod.py Script
+###---------------------------------------------------------------
 import healpy as hp
 import numpy as n
 import sys,optparse
